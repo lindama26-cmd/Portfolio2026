@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Spaces — Linda Ma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#090909;
+  --surface:#111111;
+  --border:#1e1e1e;
+  --amber:#C8922A;
+  --white:#F2F2F7;
+  --mono:DM Mono,monospace;
+  --sans:DM Sans,sans-serif;
+  --serif:Cormorant Garamond,Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--sans);font-weight:300;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 120px;background:rgba(9,9,9,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-logo{font-family:var(--mono);font-size:13px;letter-spacing:0.18em;color:var(--white);text-decoration:none;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--white);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--amber)}
+
+/* HERO */
+.hero{padding:8rem 120px 3rem}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;margin-bottom:1.5rem}
+.hero-title{font-family:var(--serif);font-size:clamp(2.4rem,4.8vw,4.5rem);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:var(--white);max-width:800px;margin-bottom:3rem}
+.hero-title em{font-style:italic;color:var(--amber)}
+.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);max-width:640px}
+.meta-item{background:var(--bg);padding:1.25rem 1.75rem}
+.meta-label{font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;margin-bottom:0.4rem}
+.meta-value{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--white)}
+
+/* IMPACT STRIP */
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.impact-stat{background:var(--surface);padding:3rem 3rem}
+.impact-stat:first-child{padding-left:120px}
+.impact-num{font-family:var(--sans);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--white);line-height:1;margin-bottom:0.5rem}
+.impact-num em{color:var(--amber);font-style:normal}
+.impact-label{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);text-transform:uppercase;opacity:0.5;line-height:1.6}
+
+/* SECTIONS */
+.section{padding:5rem 120px;border-bottom:1px solid var(--border)}
+.section-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:0.75rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.1;color:var(--white);max-width:680px;margin-bottom:2rem}
+.section-title em{font-style:italic}
+.section-body{font-size:14px;color:var(--white);line-height:1.85;font-weight:300;opacity:0.8}
+.section-body p+p{margin-top:1.25rem}
+
+/* VISUAL BLOCKS */
+.visual-block{padding:5rem 120px;border-bottom:1px solid var(--border)}
+.visual-wrap{width:100%;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--border)}
+.visual-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.visual-wrap video{width:100%;display:block}
+.visual-caption{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--white);opacity:0.4;text-transform:uppercase;margin-top:1.25rem}
+
+/* COLLABORATORS */
+.collab{padding:4rem 120px;border-bottom:1px solid var(--border)}
+.collab-title{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:1.5rem}
+.collab-list{display:flex;flex-wrap:wrap;gap:0;background:var(--bg)}
+.collab-item{background:var(--bg);padding:0.85rem 1.5rem;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--white);border:1px solid var(--border);margin-right:-1px;margin-bottom:-1px}
+
+/* NEXT */
+.next{padding:5rem 120px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.next-label{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:0.75rem}
+.next-link{text-decoration:none;color:inherit;transition:opacity 0.2s}
+.next-link:hover{opacity:0.7}
+.next-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.5rem);font-weight:300;color:var(--white)}
+
+/* BACK */
+.back-wrap{padding:3rem 120px}
+.back-btn{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);border:1px solid var(--border);padding:0.65rem 1.25rem;text-decoration:none;transition:border-color 0.2s,color 0.2s;border-radius:2px}
+.back-btn:hover{border-color:var(--amber);color:var(--amber)}
+
+/* FOOTER */
+.footer{display:flex;justify-content:space-between;padding:2rem 120px;border-top:1px solid var(--border)}
+.footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);opacity:0.4;text-transform:uppercase}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);opacity:0.4;text-decoration:none;text-transform:uppercase;transition:opacity 0.2s}
+.footer-links a:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Linda Ma</a>
+  <ul class="nav-links">
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Case Study</div>
+  <h1 class="hero-title">Student <em>Spaces</em></h1>
+
+</section>
+
+<!-- IMPACT -->
+<div class="impact">
+  <div class="impact-stat">
+    <div class="impact-num">1<em>M</em></div>
+    <div class="impact-label">MAU in 5 weeks post launch</div>
+  </div>
+  <div class="impact-stat">
+    <div class="impact-num">9<em>mo</em></div>
+    <div class="impact-label">One of Adobe's fastest launches</div>
+  </div>
+  <div class="impact-stat">
+    <div class="impact-num">0<em>→1</em></div>
+    <div class="impact-label">Biggest next-gen impact at Adobe</div>
+  </div>
+  <div class="impact-stat">
+    <div class="impact-num" style="font-size:2rem;letter-spacing:-0.01em">Web &amp;<br>Mobile</div>
+    <div class="impact-label">Platforms</div>
+  </div>
+</div>
+
+<!-- PROBLEM + WHAT I DID -->
+<section class="section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+    <div>
+      <div class="section-eyebrow">The Problem</div>
+      <div class="section-body" style="margin-top:1rem">
+        <p>Students saw Acrobat as expensive and hard to use — yet they're its next generation of power users. Student Spaces bridges that gap with a free, AI-powered studying experience: simpler UX, a focus mode, progress tracking, and guided answers rather than just handed ones.</p>
+      </div>
+    </div>
+    <div>
+      <div class="section-eyebrow">What I Did</div>
+      <div class="section-body" style="margin-top:1rem">
+        <p>Design "Captain" on a lean cross-org startup — one PM, eng and ML teams from Acrobat, Matthew Carlson as Design Director. We jammed fast and built on trust. When David Wadhwani elevated it to L1, new teams rallied. Collaborative spirit and resilience made it land.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<div class="visual-block">
+  <div class="visual-wrap" style="position:relative;border-radius:16px;overflow:hidden;padding-top:56.25%">
+    <iframe src="https://player.vimeo.com/video/1203359159?title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&controls=1" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="visual-caption">Student Spaces — product walkthrough</div>
+</div>
+
+<!-- COLLABORATORS -->
+<div class="collab">
+  <div class="collab-title">Collaborators</div>
+  <div class="collab-list">
+    <div class="collab-item">Acrobat Engineering</div>
+    <div class="collab-item">Frontend Engineering</div>
+    <div class="collab-item">ML / AI</div>
+    <div class="collab-item">Acrobat Services</div>
+    <div class="collab-item">Product Management</div>
+    <div class="collab-item">Product Marketing</div>
+    <div class="collab-item">a.com</div>
+    <div class="collab-item">Student Community</div>
+  </div>
+</div>
+
+<!-- NEXT CASE -->
+<div class="next">
+  <a href="classrooms-galleries_3.html" class="next-link">
+    <div class="next-label">Next case study</div>
+    <div class="next-title">Classrooms and Galleries →</div>
+  </a>
+</div>
+
+<div class="back-wrap">
+  <a href="index.html" class="back-btn">← Back to work</a>
+</div>
+
+<footer class="footer">
+  <span class="footer-copy">© 2025 Linda Ma</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/lindamadesign/" target="_blank">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1tmSQ02ODDLos4BRu1iUlpGIeajbMu-B9/view?usp=sharing" target="_blank">Resume</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -26,46 +26,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--white);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--amber)}
-.back-btn{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);border:1px solid var(--border);padding:0.65rem 1.25rem;text-decoration:none;transition:border-color 0.2s,color 0.2s;border-radius:2px;margin-bottom:3rem}
-.back-btn:hover{border-color:var(--amber);color:var(--amber)}
 
 /* HERO */
-.hero{padding:6.5rem 120px 2rem;border-bottom:none}
+.hero{padding:8rem 120px 3rem}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;margin-bottom:1.5rem}
 .hero-title{font-family:var(--serif);font-size:clamp(2.4rem,4.8vw,4.5rem);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:var(--white);max-width:800px;margin-bottom:3rem}
 .hero-title em{font-style:italic;color:var(--amber)}
 
 /* IMPACT STRIP */
-.impact{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-bottom:1px solid var(--border)}
-.impact-stat{background:var(--surface);padding:120px 3rem}
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.impact-stat{background:var(--surface);padding:3rem 3rem}
 .impact-stat:first-child{padding-left:120px}
-.impact-num{font-family:var(--sans);font-size:clamp(3rem,5vw,5rem);font-weight:300;color:var(--white);line-height:1;margin-bottom:0.5rem}
+.impact-num{font-family:var(--sans);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--white);line-height:1;margin-bottom:0.5rem}
 .impact-num em{color:var(--amber);font-style:normal}
-.impact-label{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);text-transform:uppercase;opacity:0.5;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.impact-label{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);text-transform:uppercase;opacity:0.5;line-height:1.6}
 
 /* SECTIONS */
 .section{padding:5rem 120px;border-bottom:1px solid var(--border)}
-.section-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:0.5rem}
+.section-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:0.75rem}
 .section-body{font-size:14px;color:var(--white);line-height:1.85;font-weight:300;opacity:0.8}
 .section-body p+p{margin-top:1.25rem}
 
 /* VISUAL BLOCKS */
-.visual-block{padding:0 8rem 120px;border-bottom:1px solid var(--border)}
-.visual-wrap{width:100%;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:400px}
-.visual-wrap img{width:100%;height:100%;object-fit:contain;display:block}
-.visual-placeholder{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;color:rgba(242,242,247,0.15);text-transform:uppercase;padding:6rem 0}
+.visual-block{padding:5rem 120px;border-bottom:1px solid var(--border)}
+.visual-wrap{width:100%;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--border)}
+.visual-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .visual-caption{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--white);opacity:0.4;text-transform:uppercase;margin-top:1.25rem}
 
-/* COLLAB */
-.collab{padding:5rem 120px;border-bottom:1px solid var(--border)}
-.collab-title{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:2rem}
-.collab-list{display:flex;flex-wrap:nowrap;background:var(--surface)}
-.collab-item{background:var(--surface);padding:1rem 2.5rem;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--white)}
+/* COLLABORATORS */
+.collab{padding:4rem 120px;border-bottom:1px solid var(--border)}
+.collab-title{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:1.5rem}
+.collab-list{display:flex;flex-wrap:wrap;gap:0;background:var(--bg)}
+.collab-item{background:var(--bg);padding:0.85rem 1.5rem;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--white);border:1px solid var(--border);margin-right:-1px;margin-bottom:-1px}
 
 /* NEXT */
-.next{padding:6rem 120px;display:flex;justify-content:space-between;align-items:center}
-.next-label{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:1rem}
+.next{padding:5rem 120px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.next-label{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:0.75rem}
+.next-link{text-decoration:none;color:inherit;transition:opacity 0.2s}
+.next-link:hover{opacity:0.7}
 .next-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.5rem);font-weight:300;color:var(--white)}
 
+/* BACK */
+.back-wrap{padding:3rem 120px}
+.back-btn{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);border:1px solid var(--border);padding:0.65rem 1.25rem;text-decoration:none;transition:border-color 0.2s,color 0.2s;border-radius:2px}
+.back-btn:hover{border-color:var(--amber);color:var(--amber)}
+
+/* FOOTER */
 .footer{display:flex;justify-content:space-between;padding:2rem 120px;border-top:1px solid var(--border)}
 .footer-copy{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);opacity:0.4;text-transform:uppercase}
 .footer-links{display:flex;gap:2rem}
@@ -76,17 +82,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 <body>
 
 <nav>
-  <a href="linda_ma_portfolio.html" class="nav-logo">Linda Ma</a>
+  <a href="index.html" class="nav-logo">Linda Ma</a>
   <ul class="nav-links">
-    <li><a href="linda_ma_portfolio.html#work">Work</a></li>
-    <li><a href="linda_ma_portfolio.html#about">About</a></li>
-    <li><a href="linda_ma_portfolio.html#contact">Contact</a></li>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:1rem">Case Study</div>
+  <div class="hero-eyebrow">Case Study</div>
   <h1 class="hero-title">Classrooms and <em>Galleries</em></h1>
 </section>
 
@@ -110,7 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
   </div>
 </div>
 
-<!-- PROBLEM + WHAT I DID: 2 columns -->
+<!-- PROBLEM + WHAT I DID -->
 <section class="section">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
     <div>
@@ -130,8 +136,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 <!-- VIDEO -->
 <div class="visual-block">
-  <div class="visual-wrap" style="position:relative;border-radius:16px;overflow:hidden;padding-top:56.25%;min-height:0">
-    <iframe src="https://player.vimeo.com/video/1203662696?title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&controls=1" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <div class="visual-wrap" style="position:relative;border-radius:16px;overflow:hidden;padding-top:56.25%">
+    <iframe src="https://player.vimeo.com/video/1203744871?title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&controls=1" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div class="visual-caption">Classrooms and Galleries — product walkthrough</div>
 </div>
@@ -151,13 +157,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 <!-- NEXT CASE -->
 <div class="next">
-  <div>
+  <a href="alibaba-partnership_1.html" class="next-link">
     <div class="next-label">Next case study</div>
     <div class="next-title">Alibaba Strategic Partnership →</div>
-  </div>
+  </a>
 </div>
 
-<div style="padding:120px 3rem 0;border-top:1px solid var(--border)"><a href="linda_ma_portfolio.html" class="back-btn">← Back to work</a></div>
+<div class="back-wrap">
+  <a href="index.html" class="back-btn">← Back to work</a>
+</div>
 
 <footer class="footer">
   <span class="footer-copy">© 2025 Linda Ma</span>

@@ -10,7 +10,7 @@
 :root{--bg:#090909;--surface:#111111;--border:#1e1e1e;--amber:#C8922A;--white:#F2F2F7;--mono:DM Mono,monospace;--sans:DM Sans,sans-serif;--serif:Cormorant Garamond,Georgia,serif;}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:var(--sans);font-weight:300;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 120px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 120px;background:rgba(9,9,9,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .nav-logo{font-family:var(--mono);font-size:13px;letter-spacing:0.18em;color:var(--white);text-transform:uppercase;text-decoration:none}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--white);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
@@ -63,6 +63,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .footer-links{display:flex;gap:2rem}
 .footer-links a{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);opacity:0.4;text-decoration:none;text-transform:uppercase;transition:opacity 0.2s}
 .footer-links a:hover{opacity:1}
+
+@media(max-width:768px){
+  nav{padding:1.25rem 1.5rem}
+  .nav-links{gap:1.5rem}
+  .hero{padding:72px 1.5rem 0}
+  .work{padding:3rem 1.5rem}
+  .work-grid{grid-template-columns:1fr;gap:3rem}
+  .about{padding:3rem 1.5rem;grid-template-columns:1fr;gap:3rem}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .capabilities{padding:3rem 1.5rem}
+  .cap-grid{grid-template-columns:1fr 1fr}
+  .contact{padding:4rem 1.5rem}
+  .contact-info{flex-direction:column;gap:2rem;align-items:center}
+  .footer{padding:1.5rem;flex-direction:column;gap:1rem;align-items:center}
+}
+
+@media(max-width:480px){
+  .nav-links{gap:1rem}
+  .cap-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>

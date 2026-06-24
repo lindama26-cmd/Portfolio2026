@@ -84,6 +84,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .footer-links{display:flex;gap:2rem}
 .footer-links a{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--white);opacity:0.4;text-decoration:none;text-transform:uppercase;transition:opacity 0.2s}
 .footer-links a:hover{opacity:1}
+
+@media(max-width:768px){
+  nav{padding:1.25rem 1.5rem}
+  .nav-links{gap:1.5rem}
+  .hero{padding:5rem 1.5rem 2rem}
+  .hero-meta{grid-template-columns:1fr 1fr;max-width:100%}
+  .impact{grid-template-columns:1fr 1fr}
+  .impact-stat{padding:2rem 1.5rem}
+  .impact-stat:first-child{padding-left:1.5rem}
+  .section{padding:3rem 1.5rem}
+  .section > div[style]{grid-template-columns:1fr !important;gap:2.5rem !important}
+  .visual-block{padding:3rem 1.5rem}
+  .collab{padding:2.5rem 1.5rem}
+  .collab-list{flex-wrap:wrap}
+  .next{padding:3rem 1.5rem}
+  .back-wrap{padding:2rem 1.5rem}
+  .footer{padding:1.5rem;flex-direction:column;gap:1rem;align-items:center}
+}
+@media(max-width:480px){
+  .impact{grid-template-columns:1fr}
+  .hero-meta{grid-template-columns:1fr}
+  .nav-links{gap:1rem}
+}
+
 </style>
 </head>
 <body>
